@@ -8,7 +8,8 @@ function updateParagraph() {
 setInterval(updateParagraph, 50); */
 
 function circleArea (r) {
-    return r * r * 3.14;
+    var area = r * r * 3.14;
+    return area;
 }
 
 document.write('<p>r = 5' + circleArea(5) + '</p>');
