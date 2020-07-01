@@ -1,5 +1,8 @@
-var startTime = null;
-var displayArea = document.getElementById('display-area');
+var game = {
+    startTime: null,
+    displayArea: document.getElementById('display-area')
+}
+
 function start() {
     startTime = Date.now();
     document.body.onkeydown = stop;
@@ -8,6 +11,7 @@ function start() {
 function stop() {
     var currentTime = Date.now();
     var seconds = (currentTime - startTime) / 1000;
+
     if (9.5 <= seconds && seconds <= 10.5) {
         displayArea.innerText = 'Wow, you pressed in' + seconds + 'seconds!';
     } else {
