@@ -17,3 +17,22 @@ consnt answers = [
     '{userName}のいいところはその全てです。ありのままの{userName}自身がいいところなのです。',
     '{userName}のいいところは自制心です。やばいと思ったときにしっかりと衝動を抑えられる{userName}が皆から評価されています。'
 ];
+
+/**
+ * @param {string} userName User's name
+ * @return {string} Result 
+ */
+function assessment (userName) {
+    // get all code no. then addition
+    let sumOfCharCode = 0;
+    for (let i = 0; i < userName.length; i++) {
+        sumOfCharCode = sumOfCharCode + userName.charCodeAt(i);
+    }
+
+    // devide char code summary of answer then get index int
+    const index = sumOfCharCode % answers.length;
+    const result = answers[index];
+
+    // TODO replace [userName] to user's name
+    return result;
+}
