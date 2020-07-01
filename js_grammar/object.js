@@ -1,21 +1,19 @@
 var game = {
     startTime: null,
-    displayArea: document.getElementById('display-area')
-}
+    displayArea: document.getElementById('display-area'),
+    start: function () {
+        startTime = Date.now();
+        document.body.onkeydown = stop;
+    },
+    stop: function () {
+        var currentTime = Date.now();
+        var seconds = (currentTime - startTime) / 1000;
 
-function start() {
-    startTime = Date.now();
-    document.body.onkeydown = stop;
-}
-
-function stop() {
-    var currentTime = Date.now();
-    var seconds = (currentTime - startTime) / 1000;
-
-    if (9.5 <= seconds && seconds <= 10.5) {
-        displayArea.innerText = 'Wow, you pressed in' + seconds + 'seconds!';
-    } else {
-        displayArea.innerText = 'Oops, you pressed in' + seconds + 'seconds.'
+        if (9.5 <= seconds && seconds <= 10.5) {
+            displayArea.innerText = 'Wow, you pressed in' + seconds + 'seconds!';
+        } else {
+            displayArea.innerText = 'Oops, you pressed in' + seconds + 'seconds.'
+        }
     }
 }
 
