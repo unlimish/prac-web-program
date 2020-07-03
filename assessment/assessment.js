@@ -1,4 +1,19 @@
 'use strict';
+
+
+const userNameInput = document.getElementById('user-name');
+const assessmentButton = document.getElementById('assessment');
+const resultDevided = document.getElementById('result-area');
+const tweetDevided = document.getElementById('tweet-area');
+
+assessmentButton.onclick = () => {
+    const userName = userNameInput.value;
+    console.log(userName);
+    // TODO Make assessment result area
+    // TODO Make tweet area
+}
+
+
 const answers = [
     '{userName}のいいところは声です。{userName}の特徴的な声は皆を惹きつけ、心に残ります。',
     '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
@@ -22,7 +37,7 @@ const answers = [
  * @param {string} userName User's name
  * @return {string} Result 
  */
-function assessment (userName) {
+function assessment(userName) {
     // get all code no. then addition
     let sumOfCharCode = 0;
     for (let i = 0; i < userName.length; i++) {
@@ -39,7 +54,7 @@ function assessment (userName) {
 
 console.assert(
     assessment('太郎') ==
-        '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+    '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
     '診断結果の文言を特定の部分を名前に書き換える処理が正しくありません。'
 );
 
