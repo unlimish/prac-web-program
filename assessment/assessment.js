@@ -8,6 +8,11 @@ const tweetDevided = document.getElementById('tweet-area');
 
 assessmentButton.onclick = () => {
     const userName = userNameInput.value;
+    if (userName.length === 0) {
+        // if userName is none, quit
+        return;
+    }
+    
     console.log(userName);
     // TODO Make assessment result area
     // TODO Make tweet area
