@@ -6,6 +6,16 @@ const assessmentButton = document.getElementById('assessment');
 const resultDevided = document.getElementById('result-area');
 const tweetDevided = document.getElementById('tweet-area');
 
+/**
+ * remove all assigned child of elements
+ * @param {HTMLElement} element HTML elements
+ */
+function removeAllChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
 assessmentButton.onclick = () => {
     const userName = userNameInput.value;
     if (userName.length === 0) {
@@ -15,9 +25,7 @@ assessmentButton.onclick = () => {
 
     console.log(userName);
     // TODO Make assessment result area
-    while (resultDevided.firstChild) {
-        resultDevided.removeChild(resultDevided.firstChild);
-    }
+    removeAllChildren(resultDevided);
     const header = document.createElement('h3');
     header.innerText = 'Result';
     resultDevided.appendChild(header);
