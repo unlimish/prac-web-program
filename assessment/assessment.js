@@ -1,5 +1,5 @@
 'use strict';
-consnt answers = [
+const answers = [
     '{userName}のいいところは声です。{userName}の特徴的な声は皆を惹きつけ、心に残ります。',
     '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
     '{userName}のいいところは情熱です。{userName}の情熱に周りの人は感化されます。',
@@ -31,8 +31,12 @@ function assessment (userName) {
 
     // devide char code summary of answer then get index int
     const index = sumOfCharCode % answers.length;
-    const result = answers[index];
+    let result = answers[index];
 
-    // TODO replace [userName] to user's name
+    result = result.replace(/\{userName\}/g, userName)
     return result;
 }
+
+console.log(assessment('太郎'));
+console.log(assessment('次郎'));
+console.log(assessment('太郎'));
