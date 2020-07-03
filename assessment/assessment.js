@@ -15,6 +15,9 @@ assessmentButton.onclick = () => {
 
     console.log(userName);
     // TODO Make assessment result area
+    while (resultDevided.firstChild) {
+        resultDevided.removeChild(resultDevided.firstChild);
+    }
     const header = document.createElement('h3');
     header.innerText = 'Result';
     resultDevided.appendChild(header);
