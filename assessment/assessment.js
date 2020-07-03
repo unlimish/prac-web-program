@@ -37,6 +37,13 @@ function assessment (userName) {
     return result;
 }
 
-console.log(assessment('太郎'));
-console.log(assessment('次郎'));
-console.log(assessment('太郎'));
+console.assert(
+    assessment('太郎') ==
+        '太郎のいいところは決断力です。太郎がする決断にいつも助けられる人がいます。',
+    '診断結果の文言を特定の部分を名前に書き換える処理が正しくありません。'
+);
+
+console.assert(
+    assessment('太郎') == assessment('太郎'),
+    '入力が同じ名前の時、同じ結果を出力する処理が正しくありません。'
+)
