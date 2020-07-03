@@ -12,9 +12,17 @@ assessmentButton.onclick = () => {
         // if userName is none, quit
         return;
     }
-    
+
     console.log(userName);
     // TODO Make assessment result area
+    const header = document.createElement('h3');
+    header.innerText = 'Result';
+    resultDevided.appendChild(header);
+
+    const paragraph = document.createElement('p');
+    const result = assessment(userName);
+    paragraph.innerText = result;
+    resultDevided.appendChild(paragraph);
     // TODO Make tweet area
 }
 
