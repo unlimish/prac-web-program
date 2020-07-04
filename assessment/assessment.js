@@ -35,6 +35,16 @@ assessmentButton.onclick = () => {
     paragraph.innerText = result;
     resultDevided.appendChild(paragraph);
     // TODO Make tweet area
+    removeAllChildren(tweetDevided);
+    const anchor = document.createElement('a');
+    const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=あなたのいいところ&ref_src=twsrc%5Etfw'
+
+    anchor.setAttribute('href', hrefValue);
+    anchor.className = 'twitter-hashtag-button';
+    anchor.setAttribute('data-text', 'Result text');
+    anchor.innerText = 'Tweet #あなたのいいところ';
+
+    tweetDevided.appendChild(anchor);
 }
 
 
