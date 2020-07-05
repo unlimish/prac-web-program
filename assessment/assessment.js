@@ -6,6 +6,10 @@ const assessmentButton = document.getElementById('assessment');
 const resultDevided = document.getElementById('result-area');
 const tweetDevided = document.getElementById('tweet-area');
 
+userNameInput.onkeydown = event => {
+
+}
+
 /**
  * remove all assigned child of elements
  * @param {HTMLElement} element HTML elements
@@ -23,7 +27,7 @@ assessmentButton.onclick = () => {
         return;
     }
 
-    console.log(userName);
+    
     // TODO Make assessment result area
     removeAllChildren(resultDevided);
     const header = document.createElement('h3');
@@ -39,7 +43,7 @@ assessmentButton.onclick = () => {
     // TODO Make tweet area
     removeAllChildren(tweetDevided);
     const anchor = document.createElement('a');
-    const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=' + encodeURIComponent('あなたのいいところ') + '&ref_src=twsrc%5Etfw'
+    const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=' + encodeURIComponent('あなたのいいところ') + '&ref_src=twsrc%5Etfw';
 
     anchor.setAttribute('href', hrefValue);
     anchor.className = 'twitter-hashtag-button';
@@ -47,6 +51,12 @@ assessmentButton.onclick = () => {
     anchor.innerText = 'Tweet #あなたのいいところ';
 
     tweetDevided.appendChild(anchor);
+
+
+    // set widgets.js for tweet widget
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+    tweetDevided.appendChild(script);
 }
 
 
