@@ -27,8 +27,8 @@ assessmentButton.onclick = () => {
         return;
     }
 
-    
-    // TODO Make assessment result area
+
+    // Make assessment result area
     removeAllChildren(resultDevided);
     const header = document.createElement('h3');
     header.innerText = 'Result';
@@ -40,7 +40,7 @@ assessmentButton.onclick = () => {
     resultDevided.appendChild(paragraph);
 
 
-    // TODO Make tweet area
+    // Make tweet area
     removeAllChildren(tweetDevided);
     const anchor = document.createElement('a');
     const hrefValue = 'https://twitter.com/intent/tweet?button_hashtag=' + encodeURIComponent('あなたのいいところ') + '&ref_src=twsrc%5Etfw';
