@@ -7,7 +7,9 @@ const resultDevided = document.getElementById('result-area');
 const tweetDevided = document.getElementById('tweet-area');
 
 userNameInput.onkeydown = event => {
-
+    if (event.key === 'Enter') {
+        assessmentButton.onclick();
+    }
 }
 
 /**
